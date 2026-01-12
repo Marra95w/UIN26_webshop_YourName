@@ -60,6 +60,7 @@ h3{
     max-width: var(--maxwidth);
     background-color: var(--white);
     margin: 0 auto;
+    position: relative;
 }
 
 header {
@@ -111,12 +112,14 @@ nav{
 }
 
 main{
+    #product-list{
     display: flex;
     justify-content: space-evenly;
     padding-left: 1rem;
     padding-right: 1rem;
     flex-wrap: wrap;
     gap: 1rem;
+    }
 
     h2{
         width: 100%;
@@ -162,3 +165,27 @@ main{
 
     }
 }
+
+/* =======HANDLEVOGN========== */
+
+#cart{
+    width: 550px;
+    background: var(--black);
+    border-left: 0.5rem solid var(--green);
+    border-bottom: 0.5rem solid var(--green);
+    padding: 1rem;
+    position: absolute;
+    top: 74px;
+    right: 0;
+
+    /* hidden brukes for å gjøre det lettere for skjermopplesnings verktøy */
+    &.hidden{
+        visibility: hidden;
+    }
+
+    table{
+        width: 100%;
+        color: var(--white);
+    }
+}
+
