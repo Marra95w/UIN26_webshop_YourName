@@ -21,7 +21,7 @@ body, html{
 body{
     font-family: 'Rubik', sans-serif;
     background-color: var(--yellow);
-    background-image: url(website_images-kopi/mainbackground.png);
+    background-image: url(../public/website_images/mainbackground.png);
 }
 /* font weigh - semibold - bold */
 
