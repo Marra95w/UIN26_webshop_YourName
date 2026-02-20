@@ -1,14 +1,22 @@
 import { use } from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+
+//hente ut data fra API-et fra CategoryLayout og useOutletCOntext og vise det i Category.jsx
 export default function Category() {
+    const {apiEndpoint, defaultApiUrl} = useOutletContext()
+    
 
     const [apiData, setApiData] = useState([])
-    const {slug} = useParams();
+    const {slug} = useParams()
+
+    console.log("denne kommer fra Category:", apiEndpoint)
 
     const getSingleData = async()=> {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${slug}`)
+        //Await -> vente på data -> må være med når en bruker API
+        //om api endepuntk finnes, eller ikke finnes defaultApiUrl + slug
+        const response = await fetch(apiEndpoint ? apiEndpoint : defaultApiUrl+slug)
         const data = await response.json()
         setApiData(data)
         console.log(apiData)
