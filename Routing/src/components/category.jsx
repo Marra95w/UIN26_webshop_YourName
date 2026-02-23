@@ -6,8 +6,6 @@ import { useState } from "react";
 //hente ut data fra API-et fra CategoryLayout og useOutletCOntext og vise det i Category.jsx
 export default function Category() {
     const {apiEndpoint, defaultApiUrl} = useOutletContext()
-    
-
     const [apiData, setApiData] = useState([])
     const {slug} = useParams()
 
@@ -21,6 +19,9 @@ export default function Category() {
         setApiData(data)
         console.log(apiData)
     }
+
+    console.log('key values:', Object.keys(apiData?.sprites || {}))
+
     useEffect(()=>{
         getSingleData()
     },[slug])

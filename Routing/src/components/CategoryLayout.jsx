@@ -37,7 +37,7 @@ export default function CategoryLayout() {
 
         </nav>
         {/* Denne finnes - alt har tilgang til denne  */}
-        <Outlet context={{apiEndpoint, defaultApiUrl}}/>
+        <Outlet context={{apiEndpoint, defaultApiUrl, setApiEndpoint}}/>
         </>
     )
 }
