@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -6,6 +6,7 @@ export default function CategoryLayout() {
 
   
       //oppdatere og endre data i state()
+  const {slug} = useParams()
   const [apiData, setApiData] = useState([])
   const [apiEndpoint, setApiEndpoint] = useState()
 
@@ -26,7 +27,7 @@ export default function CategoryLayout() {
 
   useEffect(()=>{
     getData()
-  },[])
+  },[slug])
 
     return (
         <>
